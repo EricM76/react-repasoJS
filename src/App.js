@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import AcordeonItem from './AcordeonItem';
 import './App.css';
+import content from './content';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-5">
+      <h1>Refuerzo de React</h1>
+      <h2>Clase 01 | Conceptos de JS</h2>
+      <hr />
+      <div class="accordion" id="accordionExample">
+      
+          {
+            content.map((item, i) => <AcordeonItem key={item.title + i} {...item} />)
+          }
+      
+
+
+      </div>
     </div>
   );
 }
